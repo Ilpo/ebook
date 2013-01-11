@@ -1,6 +1,10 @@
 sysdyn harjoitustyö
 e-kirjojen myynti
 
+Linkkejä:
+http://ebookcomments.blogspot.fi/
+
+
 
 Mallit tehdään englanniksi
 
@@ -14,6 +18,8 @@ Näkökulma?
 Mallin osat:
 
 - Asiakaskunnan kehitys (SIR)
+	asiakkaiden jaottelu?
+	- kerran kokeilleet, lojaalit asiakkaat, satunnaisesti ostavat asiakkaat, entiset asiakkaat
 
 - e-laitteiden(lukijoiden) kehitys
 - e-laitteiden hinnanmääritys
