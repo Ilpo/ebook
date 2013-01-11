@@ -1,4 +1,51 @@
 {UTF-8}
+Average stopping time=
+	18
+	~	
+	~		|
+
+"E-book readers falling out of use"  = A FUNCTION OF( "E-book readers owned")
+	~	
+	~		|
+
+"E-book users"= INTEG (
+	New users-Stopping of use,
+		100)
+	~	
+	~		|
+
+"E-book ratio"  = A FUNCTION OF( "E-book marketing","P-book marketing",Price difference\
+		,Product Attractiveness)
+	~	
+	~		|
+
+New users=
+	MIN(Potential Audience, "E-book users" )
+	~	
+	~		|
+
+"E-book readers sold"  = A FUNCTION OF( "E-book reader price","E-book readers in stock"\
+		,Product Attractiveness)
+	~	
+	~		|
+
+"Interest in e-book readers"=
+	"E-book users"+Potential Audience
+	~	
+	~		|
+
+Potential Audience  = A FUNCTION OF( -New users,-Stopping of use) ~~|
+Potential Audience= INTEG (
+	Growth of audience+Stopping of use-New users,
+		1e+006)
+	~	
+	~		|
+
+Stopping of use=
+	"E-book users"/Average stopping time
+	~	
+	~		|
+
 "E-book readers in stock"  = A FUNCTION OF( "E-book readers made",-"E-book readers sold"\
 		)
 	~	
@@ -17,18 +64,8 @@ Desired device profit ratio  = A FUNCTION OF( )
 	~	
 	~		|
 
-"E-book readers falling out of use"  = A FUNCTION OF( "E-book readers owned","Interest in e-book readers"\
-		)
-	~	
-	~		|
-
 "E-book reader price"  = A FUNCTION OF( Desired device profit ratio,Manufacturing costs\
 		)
-	~	
-	~		|
-
-"E-book readers sold"  = A FUNCTION OF( "E-book reader price","E-book readers in stock"\
-		,"Interest in e-book readers",Product Attractiveness)
 	~	
 	~		|
 
@@ -50,15 +87,6 @@ Manufacturing costs  = A FUNCTION OF( Battery Time,Interface quality,Quality of 
 	~	
 	~		|
 
-"E-book ratio"  = A FUNCTION OF( "E-book marketing","E-book users","P-book marketing"\
-		,Price difference,Product Attractiveness)
-	~	
-	~		|
-
-"Interest in e-book readers"  = A FUNCTION OF( "E-book users",Potential Audience)
-	~	
-	~		|
-
 Book sales  = A FUNCTION OF( Interest in reading)
 	~	
 	~		|
@@ -75,19 +103,11 @@ Book sales  = A FUNCTION OF( Interest in reading)
 	~	
 	~		|
 
-"E-book users"  = A FUNCTION OF( New users,-Stopping of use)
-	~	
-	~		|
-
 "E-books sold"  = A FUNCTION OF( Book sales,"E-book ratio")
 	~	
 	~		|
 
 Ease of use  = A FUNCTION OF( Interface quality,Screen size,Size)
-	~	
-	~		|
-
-Growth of audience  = A FUNCTION OF( )
 	~	
 	~		|
 
@@ -98,10 +118,6 @@ Interest in reading=
 	~		|
 
 Interface quality  = A FUNCTION OF( )
-	~	
-	~		|
-
-New users  = A FUNCTION OF( "E-book users",Potential Audience)
 	~	
 	~		|
 
@@ -118,14 +134,6 @@ New users  = A FUNCTION OF( "E-book users",Potential Audience)
 	~		|
 
 "P-books sold"  = A FUNCTION OF( Book sales,"E-book ratio")
-	~	
-	~		|
-
-Population  = A FUNCTION OF( )
-	~	
-	~		|
-
-Potential Audience  = A FUNCTION OF( Growth of audience,-New users)
 	~	
 	~		|
 
@@ -150,10 +158,6 @@ Robustness  = A FUNCTION OF( Quality of materials,Sturdiness)
 	~		|
 
 Screen size  = A FUNCTION OF( )
-	~	
-	~		|
-
-Stopping of use  = A FUNCTION OF( "E-book users")
 	~	
 	~		|
 
@@ -192,32 +196,27 @@ TIME STEP  = 1
 V300  Do not put anything below this section - it will be ignored
 *E-book readers
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-10,1,Potential Audience,399,163,40,20,3,3,0,0,0,0,0,0
-10,2,"E-book users",698,163,40,20,3,3,0,0,0,0,0,0
-10,3,Population,317,81,34,11,8,3,0,0,0,0,0,0
-10,4,"Interest in e-book readers",616,359,57,19,8,131,0,0,0,0,0,0
-1,5,7,2,4,0,0,22,0,0,0,-1--1--1,,1|(601,163)|
-1,6,7,1,100,0,0,22,0,0,0,-1--1--1,,1|(485,163)|
-11,7,428,538,163,6,8,34,3,0,0,1,0,0,0
-10,8,New users,538,182,35,11,40,3,0,0,-1,0,0,0
-12,18,48,197,165,10,8,0,3,0,0,-1,0,0,0
-1,19,21,1,4,0,0,22,0,0,0,-1--1--1,,1|(324,165)|
-1,20,21,18,100,0,0,22,0,0,0,-1--1--1,,1|(242,165)|
-11,21,48,283,165,6,8,34,3,0,0,1,0,0,0
-10,22,Growth of audience,283,192,33,19,40,3,0,0,-1,0,0,0
-12,23,48,940,164,10,8,0,3,0,0,-1,0,0,0
-1,24,26,23,4,0,0,22,0,0,0,-1--1--1,,1|(880,164)|
-1,25,26,2,100,0,0,22,0,0,0,-1--1--1,,1|(778,164)|
-11,26,48,824,164,6,8,34,3,0,0,1,0,0,0
-10,27,Stopping of use,824,183,49,11,40,3,0,0,-1,0,0,0
-1,28,1,8,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(438,238)|
-1,29,2,27,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(805,72)|
-1,31,2,8,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(577,242)|
-1,34,1,4,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(398,270)|
-12,35,2,613,216,23,23,4,3,0,0,-1,0,0,0
-12,36,1,768,111,23,23,4,3,0,0,-1,0,0,0
-12,38,1,457,206,23,23,5,3,0,0,-1,0,0,0
-1,39,2,4,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(691,307)|
+10,1,Potential Audience,113,324,40,20,3,3,0,0,0,0,0,0
+10,2,"E-book users",412,324,40,20,3,3,0,0,0,0,0,0
+10,3,"Interest in e-book readers",330,520,57,19,8,131,0,0,0,0,0,0
+1,4,6,2,4,0,0,22,0,0,0,-1--1--1,,1|(315,324)|
+1,5,6,1,100,0,0,22,0,0,0,-1--1--1,,1|(199,324)|
+11,6,220,252,324,6,8,34,3,0,0,1,0,0,0
+10,7,New users,252,343,35,11,40,3,0,0,-1,0,0,0
+1,8,9,2,100,0,0,22,0,0,0,-1--1--1,,1|(412,217)|
+11,9,204,266,217,6,8,34,3,0,0,1,0,0,0
+10,10,Stopping of use,266,236,49,11,40,3,0,0,-1,0,0,0
+1,11,1,7,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(152,399)|
+1,12,2,10,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(501,243)|
+1,13,2,7,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(291,403)|
+1,14,1,3,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(144,465)|
+12,15,2,327,377,23,23,4,3,0,0,-1,0,0,0
+12,16,1,415,170,23,23,4,3,0,0,-1,0,0,0
+12,17,1,171,367,23,23,5,3,0,0,-1,0,0,0
+1,18,2,3,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(405,468)|
+10,19,Average stopping time,141,122,56,19,8,3,0,0,0,0,0,0
+1,20,19,9,0,0,0,0,0,64,0,-1--1--1,,1|(207,172)|
+1,21,9,1,4,0,0,22,0,0,0,-1--1--1,,1|(113,217)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Book Sales
@@ -228,14 +227,13 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 10,4,"E-book price",992,400,43,11,8,3,0,0,0,0,0,0
 10,5,"P-book price",878,451,43,11,8,3,0,0,0,0,0,0
 10,6,"E-book ratio",665,291,41,11,8,3,0,0,0,0,0,0
-10,7,"E-book users",956,225,52,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,8,Product Attractiveness,798,141,83,10,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 1,9,8,6,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(705,234)|
 1,10,11,1,4,0,0,22,0,0,0,-1--1--1,,1|(398,266)|
-11,11,444,398,301,8,6,33,3,0,0,4,0,0,0
+11,11,284,398,301,8,6,33,3,0,0,4,0,0,0
 10,12,"E-books sold",449,301,43,11,40,3,0,0,-1,0,0,0
 1,13,14,2,4,0,0,22,0,0,0,-1--1--1,,1|(394,518)|
-11,14,668,394,478,8,6,33,3,0,0,4,0,0,0
+11,14,572,394,478,8,6,33,3,0,0,4,0,0,0
 10,15,"P-books sold",445,478,43,11,40,3,0,0,-1,0,0,0
 1,16,6,12,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(561,312)|
 1,17,6,15,1,0,45,0,2,64,0,-1--1--1,|12||0-0-0,1|(576,402)|
@@ -319,12 +317,11 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 10,20,"E-book readers made",192,267,51,19,40,3,0,0,-1,0,0,0
 1,21,23,1,4,0,0,22,0,0,0,-1--1--1,,1|(766,247)|
 1,22,23,15,100,0,0,22,0,0,0,-1--1--1,,1|(531,247)|
-11,23,0,649,247,6,8,34,3,0,0,1,0,0,0
+11,23,156,649,247,6,8,34,3,0,0,1,0,0,0
 10,24,"E-book readers sold",649,274,51,19,40,3,0,0,-1,0,0,0
 1,25,15,24,1,0,0,0,0,64,0,-1--1--1,,1|(463,286)|
 1,26,8,24,1,0,0,0,0,64,0,-1--1--1,,1|(688,327)|
 1,27,12,24,1,0,0,0,0,64,0,-1--1--1,,1|(577,368)|
-10,28,"Interest in e-book readers",607,73,62,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128
 1,29,28,23,0,0,0,0,0,64,0,-1--1--1,,1|(627,159)|
 1,30,28,5,1,0,0,0,0,64,0,-1--1--1,,1|(886,140)|
 ///---\\\
@@ -332,7 +329,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 9:Current
 23:0
 15:0,0,0,0,0,0
-19:100,3
+19:100,0
 27:2,
 34:0,
 5:Manufacturing costs
