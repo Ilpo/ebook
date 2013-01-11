@@ -1,0 +1,33 @@
+sysdyn harjoitustyö
+e-kirjojen myynti
+
+
+Mallit tehdään englanniksi
+
+Näkökulma?
+
+
+
+
+
+
+Mallin osat:
+
+- Asiakaskunnan kehitys (SIR)
+
+- e-laitteiden(lukijoiden) kehitys
+- e-laitteiden hinnanmääritys
+- e-laitteiden myynti
+
+- e-kirjakauppojen kehitys
+- perinteisten kirjojen ja e-kirjojen kilpailu
+- e-kirjojen hinnanmääritys
+- e-kirjojen myynti
+
+
+
+
+e-laitteiden jaottelu?
+- e-lukijat, tablettikoneet(ipad), kännykät?
+
+
