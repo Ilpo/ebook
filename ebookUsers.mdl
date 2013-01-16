@@ -1,0 +1,168 @@
+{UTF-8}
+Adoption from advertising=
+	Advertising effectiveness*Potential Audience
+	~	
+	~		|
+
+Adoption from innovators=
+	0.001 * Potential Audience
+	~	
+	~		|
+
+Adoption from word of mouth=
+	"E-book users"*Contact rate*Probability that contact has not yet adopted
+	~	
+	~		|
+
+Advertising effectiveness=
+	0
+	~	
+	~		|
+
+Average stopping time=
+	1e+020
+	~	
+	~		|
+
+Contact rate=
+	0.01
+	~	
+	~		|
+
+"E-book users"= INTEG (
+	New users-Stopping of use,
+		0)
+	~	
+	~		|
+
+Former users= INTEG (
+	Stopping of use,
+		0)
+	~	
+	~		|
+
+"Interest in e-book readers"=
+	"E-book users"+Potential Audience
+	~	
+	~		|
+
+New users=
+	MIN(Potential Audience, Adoption from advertising+Adoption from innovators+Adoption from word of mouth\
+		)
+	~	
+	~		|
+
+Potential Audience= INTEG (
+	-New users,
+		1e+006)
+	~	
+	~		|
+
+Probability that contact has not yet adopted=
+	Potential Audience/(Potential Audience + "E-book users")
+	~	
+	~		|
+
+Stopping of use=
+	MIN( "E-book users" , "E-book users"/Average stopping time )
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 1000
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.5
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Potential Audience,130,254,40,20,3,3,0,0,0,0,0,0
+10,2,"E-book users",429,254,40,20,3,3,0,0,0,0,0,0
+10,3,"Interest in e-book readers",300,620,57,19,8,131,0,0,0,0,0,0
+1,4,6,2,4,0,0,22,0,0,0,-1--1--1,,1|(332,254)|
+1,5,6,1,100,0,0,22,0,0,0,-1--1--1,,1|(216,254)|
+11,6,332,269,254,6,8,34,3,0,0,1,0,0,0
+10,7,New users,269,273,35,11,40,3,0,0,-1,0,0,0
+1,8,9,2,100,0,0,22,0,0,0,-1--1--1,,1|(507,248)|
+11,9,284,551,248,6,8,34,3,0,0,1,0,0,0
+10,10,Stopping of use,551,267,49,11,40,3,0,0,-1,0,0,0
+1,11,1,32,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(151,381)|
+1,12,2,9,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(515,152)|
+1,13,2,23,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(366,334)|
+1,14,1,3,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(84,467)|
+12,15,2,347,297,23,23,4,131,0,0,-1,0,0,0
+12,16,1,495,211,23,23,4,3,0,0,-1,0,0,0
+12,17,1,182,340,23,23,5,3,0,0,-1,0,0,0
+1,18,2,3,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(502,493)|
+10,19,Average stopping time,599,396,56,19,8,3,0,0,0,0,0,0
+1,20,19,10,0,0,0,0,0,64,0,-1--1--1,,1|(575,334)|
+1,21,9,22,4,0,0,22,0,0,0,-1--1--1,,1|(596,248)|
+10,22,Former users,675,253,40,20,3,3,0,0,0,0,0,0
+10,23,Adoption from word of mouth,268,368,47,19,8,3,0,0,0,0,0,0
+10,24,Adoption from advertising,357,145,47,19,8,3,0,0,0,0,0,0
+1,25,23,7,0,0,0,0,0,64,0,-1--1--1,,1|(268,323)|
+1,26,24,6,0,0,0,0,0,64,0,-1--1--1,,1|(311,201)|
+10,27,Adoption from innovators,164,121,47,19,8,3,0,0,0,0,0,0
+1,28,27,6,0,0,0,0,0,64,0,-1--1--1,,1|(217,189)|
+10,29,Advertising effectiveness,402,58,41,19,8,3,0,0,0,0,0,0
+1,30,29,24,0,0,0,0,0,64,0,-1--1--1,,1|(382,95)|
+10,31,Contact rate,382,416,40,11,8,3,0,0,0,0,0,0
+10,32,Probability that contact has not yet adopted,267,475,73,19,8,3,0,0,0,0,0,0
+1,33,32,23,0,0,0,0,0,64,0,-1--1--1,,1|(267,428)|
+1,34,31,23,0,0,0,0,0,64,0,-1--1--1,,1|(340,398)|
+1,35,2,32,1,0,0,0,0,64,0,-1--1--1,,1|(447,411)|
+1,36,1,7,1,0,0,0,0,64,0,-1--1--1,,1|(193,266)|
+1,37,1,24,1,0,0,0,0,64,0,-1--1--1,,1|(233,191)|
+1,38,1,27,0,0,0,0,0,64,0,-1--1--1,,1|(145,193)|
+///---\\\
+:L<%^E!@
+1:Current.vdf
+9:Current
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:2,
+34:0,
+4:Time
+5:Adoption from innovators
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+24:0
+25:1000
+26:1000
