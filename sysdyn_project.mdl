@@ -46,7 +46,8 @@ Adoption from advertising=
 Adoption from word of mouth=
 	"E-book users"*Contact rate*Probability that contact has not yet adopted
 	~	
-	~		|
+	~	vois ottaa huomioon että vain tyytyväiset asiakkaat levittävät
+	|
 
 Advertising effectiveness=
 	0
@@ -89,7 +90,8 @@ Contact rate=
 	New users-Stopping of use,
 		0)
 	~	
-	~		|
+	~	onko sama kuin e-device owners? vai melkein sama?
+	|
 
 "E-book readers in stock"  = A FUNCTION OF( "E-book readers made",-"E-book readers sold"\
 		)
@@ -259,7 +261,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 1,16,2,3,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(513,488)|
 10,17,Average stopping time,633,363,56,19,8,3,0,0,0,0,0,0
 1,18,17,10,0,0,45,0,2,64,0,-1--1--1,|12||0-0-0,1|(600,314)|
-10,19,Adoption from word of mouth,268,377,51,19,8,3,0,0,0,0,0,0
+10,19,Adoption from word of mouth,268,377,47,19,8,3,0,0,0,0,0,0
 10,20,Adoption from advertising,347,136,47,19,8,131,0,0,0,0,0,0
 1,21,19,7,0,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(268,321)|
 1,22,20,6,0,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(306,189)|
@@ -397,7 +399,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 19:100,0
 27:2,
 34:0,
-5:Adoption from innovators
+5:"E-book users"
 35:Date
 36:YYYY-MM-DD
 37:2000

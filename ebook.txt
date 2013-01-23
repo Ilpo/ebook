@@ -2,17 +2,34 @@ sysdyn harjoitustyö
 e-kirjojen myynti
 
 Linkkejä:
+
+dataa:
 http://ebookcomments.blogspot.fi/
 http://idpf.org/about-us/industry-statistics
 
-e-reading device ownership:
+e-reading device ownership
 http://www.digitalbookworld.com/2012/more-americans-e-reading-increasingly-on-tablets-pew-says/
 
+Mahdollinen käyttäjäkunnan jako:
+http://en.wikipedia.org/wiki/Early_adopter
+http://en.wikipedia.org/wiki/Diffusion_of_innovations
+
+muuta:
+http://en.wikipedia.org/wiki/Twelve_leverage_points
+(http://en.wikipedia.org/wiki/System_Archetypes)
+http://en.wikipedia.org/wiki/Technology_acceptance_model
+
+
+
+Malli
 
 Mallit tehdään englanniksi
 
-Näkökulma?
 
+
+Näkökulma?
+E-lukijoita myyvä yritys?
+/ (e-kirjojen ja -lukijoiden myynti yleisesti)
 
 
 
@@ -40,4 +57,8 @@ Mallin osat:
 e-laitteiden jaottelu?
 - e-lukijat, tablettikoneet(ipad), kännykät?
 
+
+
+
+Skenaariot:
 
